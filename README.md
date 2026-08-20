@@ -1,13 +1,22 @@
-# Domain-Aware RAG & Fine-Tuned Transformer for Intelligent Document QA
+# Scientific Literature RAG for Document QA
 
-Retrieval-augmented question answering over a corpus of **147 full-text biomedical
-research papers**, built to *measure* retrieval and modelling choices rather than
-just assemble them.
+*Retrieval-augmented question answering over scientific research papers, with a LoRA-fine-tuned reader.*
+
+Question answering over a corpus of **147 full-text research papers**, built to
+*measure* retrieval and modelling choices rather than just assemble them.
 
 The project runs six retrieval configurations, a LoRA fine-tuning experiment, and
-a five-way end-to-end comparison bracketed by two controls (no-retrieval floor and
+a six-way end-to-end comparison bracketed by two controls (no-retrieval floor and
 oracle-context ceiling), so every claim decomposes into **retrieval error vs reader
 error** instead of resting on a single aggregate score.
+
+**The corpus is the experimental condition, not the contribution.** The papers are
+biomedical (COVID-QA over CORD-19) because that corpus is long-form, densely
+terminological, and — critically — carries the annotations needed to evaluate
+retrieval and reading *separately* (see [§4](#4-dataset)). The pipeline and the
+evaluation methodology are not specific to biomedical text; the terminology-heavy
+vocabulary is what makes it a useful stress test for general-purpose retrieval,
+and that is exactly where the headline finding comes from ([§10.1](#101-retrieval--437-test-questions-4844-chunks)).
 
 ```
 COVID-QA corpus ──► clean (offset-preserving) ──► sentence-aware chunking ──► metadata

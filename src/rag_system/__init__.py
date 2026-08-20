@@ -1,4 +1,4 @@
-"""Domain-Aware RAG & Fine-Tuned Transformer for Document QA.
+"""Scientific Literature RAG for Document QA.
 
 Import-order note (macOS / Apple silicon) -- please do not "clean this up"
 -------------------------------------------------------------------------

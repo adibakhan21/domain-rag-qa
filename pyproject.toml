@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "domain-rag-qa"
 version = "0.1.0"
-description = "Domain-aware retrieval-augmented generation and LoRA-fine-tuned transformer for biomedical document QA"
+description = "Retrieval-augmented question answering over scientific research papers, with a LoRA-fine-tuned extractive reader"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }

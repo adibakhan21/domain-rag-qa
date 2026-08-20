@@ -31,8 +31,8 @@ from .service import RAGService, get_service
 LOGGER = get_logger()
 
 app = FastAPI(
-    title="Domain-Aware RAG QA",
-    description="Retrieval-augmented question answering over a biomedical document corpus (COVID-QA / CORD-19).",
+    title="Scientific Literature RAG for Document QA",
+    description="Retrieval-augmented question answering over a corpus of scientific research papers (COVID-QA / CORD-19).",
     version=__version__,
 )
 
