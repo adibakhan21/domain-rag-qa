@@ -1,0 +1,116 @@
+{
+  "environment": {
+    "device": "mps",
+    "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "python": "3.13.7",
+    "n_chunks": 4844,
+    "n_queries": 50
+  },
+  "memory": {
+    "rss_before_models_mb": 221.5,
+    "rss_after_models_mb": 660.3,
+    "models_delta_mb": 438.8,
+    "rss_at_end_mb": 692.4
+  },
+  "components": {
+    "retrieval_bm25": {
+      "n": 50,
+      "mean_ms": 2.44,
+      "std_ms": 1.22,
+      "min_ms": 0.43,
+      "p50_ms": 2.22,
+      "p95_ms": 4.8,
+      "p99_ms": 6.73,
+      "max_ms": 6.73
+    },
+    "retrieval_dense": {
+      "n": 50,
+      "mean_ms": 8.93,
+      "std_ms": 2.46,
+      "min_ms": 7.01,
+      "p50_ms": 7.45,
+      "p95_ms": 13.37,
+      "p99_ms": 15.76,
+      "max_ms": 15.76
+    },
+    "retrieval_hybrid": {
+      "n": 50,
+      "mean_ms": 11.3,
+      "std_ms": 2.06,
+      "min_ms": 7.99,
+      "p50_ms": 10.84,
+      "p95_ms": 16.93,
+      "p99_ms": 17.2,
+      "max_ms": 17.2
+    },
+    "rerank_cross_encoder": {
+      "n": 50,
+      "mean_ms": 243.86,
+      "std_ms": 28.74,
+      "min_ms": 206.16,
+      "p50_ms": 239.86,
+      "p95_ms": 271.56,
+      "p99_ms": 404.08,
+      "max_ms": 404.08
+    },
+    "reader_extractive": {
+      "n": 50,
+      "mean_ms": 133.7,
+      "std_ms": 24.53,
+      "min_ms": 109.86,
+      "p50_ms": 113.51,
+      "p95_ms": 165.55,
+      "p99_ms": 166.56,
+      "max_ms": 166.56
+    }
+  },
+  "end_to_end": {
+    "rag_bm25_no_rerank": {
+      "n": 50,
+      "mean_ms": 130.77,
+      "std_ms": 20.16,
+      "min_ms": 107.82,
+      "p50_ms": 127.16,
+      "p95_ms": 173.87,
+      "p99_ms": 180.59,
+      "max_ms": 180.59
+    },
+    "rag_hybrid_rerank": {
+      "n": 50,
+      "mean_ms": 434.9,
+      "std_ms": 43.43,
+      "min_ms": 363.56,
+      "p50_ms": 431.98,
+      "p95_ms": 494.64,
+      "p99_ms": 618.71,
+      "max_ms": 618.71
+    }
+  },
+  "throughput": {
+    "batch_1": {
+      "batch_size": 1,
+      "seconds": 0.542,
+      "queries_per_second": 1.85,
+      "ms_per_query": 541.7
+    },
+    "batch_4": {
+      "batch_size": 4,
+      "seconds": 2.083,
+      "queries_per_second": 1.92,
+      "ms_per_query": 520.63
+    },
+    "batch_8": {
+      "batch_size": 8,
+      "seconds": 3.91,
+      "queries_per_second": 2.05,
+      "ms_per_query": 488.77
+    },
+    "batch_16": {
+      "batch_size": 16,
+      "seconds": 8.644,
+      "queries_per_second": 1.85,
+      "ms_per_query": 540.26
+    }
+  }
+}

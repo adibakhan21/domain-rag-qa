@@ -1,0 +1,183 @@
+{
+  "split": "test",
+  "cells": {
+    "bge-small-en-v1.5": {
+      "chunk_stats": {
+        "n_chunks": 4844,
+        "n_documents": 147,
+        "mean_chars": 894.9,
+        "median_chars": 920,
+        "min_chars": 108,
+        "max_chars": 1063,
+        "total_chars": 4335127
+      },
+      "index_build_seconds": 58.5,
+      "n_questions": 437,
+      "systems": {
+        "bm25": {
+          "metrics": {
+            "n_queries": 437,
+            "recall@1": 0.5446224256292906,
+            "hit@1": 0.5881006864988558,
+            "recall@3": 0.7025171624713958,
+            "hit@3": 0.7139588100686499,
+            "recall@5": 0.7482837528604119,
+            "hit@5": 0.7597254004576659,
+            "recall@10": 0.7974828375286042,
+            "hit@10": 0.8100686498855835,
+            "recall@20": 0.8501144164759725,
+            "hit@20": 0.8558352402745996,
+            "mrr@10": 0.6598952090370855,
+            "ndcg@10": 0.6893350238538978
+          },
+          "timings": {
+            "retrieve_seconds_total": 0.7991654588840902,
+            "rerank_seconds_total": 0.0,
+            "seconds_total": 0.7991654588840902,
+            "ms_per_query": 1.8287539104899089,
+            "n_queries": 437
+          }
+        },
+        "dense": {
+          "metrics": {
+            "n_queries": 437,
+            "recall@1": 0.35583524027459956,
+            "hit@1": 0.39359267734553777,
+            "recall@3": 0.49084668192219677,
+            "hit@3": 0.5148741418764302,
+            "recall@5": 0.5640732265446224,
+            "hit@5": 0.5881006864988558,
+            "recall@10": 0.6739130434782609,
+            "hit@10": 0.6979405034324943,
+            "recall@20": 0.7608695652173914,
+            "hit@20": 0.7734553775743707,
+            "mrr@10": 0.4774463332243653,
+            "ndcg@10": 0.5134149832997418
+          },
+          "timings": {
+            "retrieve_seconds_total": 0.540220248978585,
+            "rerank_seconds_total": 0.0,
+            "seconds_total": 0.540220248978585,
+            "ms_per_query": 1.2362019427427575,
+            "n_queries": 437
+          }
+        },
+        "hybrid_rrf": {
+          "metrics": {
+            "n_queries": 437,
+            "recall@1": 0.4622425629290618,
+            "hit@1": 0.5034324942791762,
+            "recall@3": 0.6510297482837528,
+            "hit@3": 0.6773455377574371,
+            "recall@5": 0.7254004576659039,
+            "hit@5": 0.7437070938215103,
+            "recall@10": 0.8043478260869565,
+            "hit@10": 0.816933638443936,
+            "recall@20": 0.8718535469107551,
+            "hit@20": 0.8810068649885584,
+            "mrr@10": 0.6037657549671279,
+            "ndcg@10": 0.6456085139365934
+          },
+          "timings": {
+            "retrieve_seconds_total": 1.4757807091227733,
+            "rerank_seconds_total": 0.0,
+            "seconds_total": 1.4757807091227733,
+            "ms_per_query": 3.377072560921678,
+            "n_queries": 437
+          }
+        }
+      },
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "query_prefix": "Represent this sentence for searching relevant passages: "
+    },
+    "all-MiniLM-L6-v2": {
+      "chunk_stats": {
+        "n_chunks": 4844,
+        "n_documents": 147,
+        "mean_chars": 894.9,
+        "median_chars": 920,
+        "min_chars": 108,
+        "max_chars": 1063,
+        "total_chars": 4335127
+      },
+      "index_build_seconds": 22.5,
+      "n_questions": 437,
+      "systems": {
+        "bm25": {
+          "metrics": {
+            "n_queries": 437,
+            "recall@1": 0.5446224256292906,
+            "hit@1": 0.5881006864988558,
+            "recall@3": 0.7025171624713958,
+            "hit@3": 0.7139588100686499,
+            "recall@5": 0.7482837528604119,
+            "hit@5": 0.7597254004576659,
+            "recall@10": 0.7974828375286042,
+            "hit@10": 0.8100686498855835,
+            "recall@20": 0.8501144164759725,
+            "hit@20": 0.8558352402745996,
+            "mrr@10": 0.6598952090370855,
+            "ndcg@10": 0.6893350238538978
+          },
+          "timings": {
+            "retrieve_seconds_total": 0.8419526248471811,
+            "rerank_seconds_total": 0.0,
+            "seconds_total": 0.8419526248471811,
+            "ms_per_query": 1.9266650454168905,
+            "n_queries": 437
+          }
+        },
+        "dense": {
+          "metrics": {
+            "n_queries": 437,
+            "recall@1": 0.2334096109839817,
+            "hit@1": 0.2631578947368421,
+            "recall@3": 0.37414187643020597,
+            "hit@3": 0.39588100686498856,
+            "recall@5": 0.459954233409611,
+            "hit@5": 0.4805491990846682,
+            "recall@10": 0.5572082379862701,
+            "hit@10": 0.5743707093821511,
+            "recall@20": 0.6407322654462243,
+            "hit@20": 0.6567505720823799,
+            "mrr@10": 0.3516753841124551,
+            "ndcg@10": 0.3917870744035348
+          },
+          "timings": {
+            "retrieve_seconds_total": 0.3774905010359362,
+            "rerank_seconds_total": 0.0,
+            "seconds_total": 0.3774905010359362,
+            "ms_per_query": 0.8638226568328059,
+            "n_queries": 437
+          }
+        },
+        "hybrid_rrf": {
+          "metrics": {
+            "n_queries": 437,
+            "recall@1": 0.3707093821510298,
+            "hit@1": 0.4073226544622426,
+            "recall@3": 0.5720823798627003,
+            "hit@3": 0.5949656750572082,
+            "recall@5": 0.6739130434782609,
+            "hit@5": 0.6887871853546911,
+            "recall@10": 0.7837528604118993,
+            "hit@10": 0.7963386727688787,
+            "recall@20": 0.8615560640732265,
+            "hit@20": 0.8695652173913043,
+            "mrr@10": 0.526634521085322,
+            "ndcg@10": 0.5826305027616931
+          },
+          "timings": {
+            "retrieve_seconds_total": 1.2620781671139412,
+            "rerank_seconds_total": 0.0,
+            "seconds_total": 1.2620781671139412,
+            "ms_per_query": 2.8880507256611927,
+            "n_queries": 437
+          }
+        }
+      },
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "query_prefix": ""
+    }
+  }
+}

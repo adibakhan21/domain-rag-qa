@@ -1,0 +1,27 @@
+services:
+  rag-api:
+    build: .
+    image: domain-rag-qa:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      # Prebuilt corpus + FAISS index, produced on the host by
+      #   python scripts/prepare_data.py && python scripts/build_index.py
+      # Mounted rather than baked in: the index is ~30MB and regenerable, and
+      # keeping it out of the image lets you swap corpora without rebuilding.
+      - ./artifacts:/app/artifacts
+      # Persist model downloads across container restarts.
+      - hf-cache:/app/.cache/huggingface
+    environment:
+      - OMP_NUM_THREADS=4
+      - TOKENIZERS_PARALLELISM=false
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/health', timeout=8).status==200 else 1)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 180s   # first start downloads the embedder/reranker/reader
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  hf-cache:

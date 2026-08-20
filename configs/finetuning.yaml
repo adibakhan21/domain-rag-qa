@@ -1,0 +1,45 @@
+# LoRA fine-tuning of an extractive QA reader on COVID-QA.
+experiment:
+  name: lora-covidqa
+  tracking_uri: sqlite:///mlflow.db
+  experiment_name: domain-rag-qa
+  seed: 42
+
+data:
+  dataset_name: deepset/covid_qa_deepset
+  split: train
+  train_frac: 0.70
+  val_frac: 0.15
+  test_frac: 0.15
+  seed: 42
+  max_documents: null
+
+chunking:
+  chunk_size: 1000
+  chunk_overlap: 200
+  min_chunk_size: 100
+  strategy: sentence
+
+finetuning:
+  # Already SQuAD2-tuned, so this measures *domain adaptation*, not learning QA
+  # from scratch. That is the honest question for a 1.2k-example training set.
+  base_model: deepset/roberta-base-squad2
+  output_dir: artifacts/finetuned/roberta-covidqa-lora
+  use_lora: true
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.1
+  # Query and value projections only: the standard LoRA placement, and the
+  # cheapest position that still reaches every attention head.
+  lora_target_modules: [query, value]
+  learning_rate: 0.0003     # ~10x a full-FT LR; LoRA updates are low-rank and need it
+  num_epochs: 3
+  batch_size: 8
+  gradient_accumulation_steps: 1
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_seq_length: 384
+  doc_stride: 128
+  seed: 42
+  fp16: false               # MPS autocast is unreliable; CPU/MPS run in fp32
+  device: null

@@ -1,0 +1,39 @@
+# Pinned to the exact versions the reported results were produced with
+# (generated from `pip freeze` of the working environment, not hand-written).
+#
+# For a CPU-only install (much smaller than the default CUDA wheels):
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch
+#   pip install -r requirements.txt
+
+# --- core ML ---
+torch==2.13.0
+transformers==5.15.1
+sentence-transformers==6.0.0
+peft==0.20.0
+accelerate==1.14.0
+datasets==5.0.1
+
+# --- retrieval ---
+faiss-cpu==1.15.0
+rank-bm25==0.2.2
+
+# --- experiment tracking ---
+mlflow==3.15.1
+
+# --- serving ---
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+pydantic==2.13.4
+
+# --- scientific / plotting ---
+numpy==2.5.2
+pandas==2.3.3
+matplotlib==3.11.1
+scikit-learn==1.9.0
+PyYAML==6.0.3
+
+# --- dev / test ---
+pytest==9.1.1
+httpx==0.28.1
+psutil==7.2.2
+tqdm==4.70.0

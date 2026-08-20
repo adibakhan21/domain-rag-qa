@@ -1,0 +1,203 @@
+{
+  "base_model": "deepset/roberta-base-squad2",
+  "config": {
+    "base_model": "deepset/roberta-base-squad2",
+    "output_dir": "artifacts/finetuned/roberta-covidqa-lora",
+    "use_lora": true,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.1,
+    "lora_target_modules": [
+      "query",
+      "value"
+    ],
+    "learning_rate": 0.0003,
+    "num_epochs": 3,
+    "batch_size": 8,
+    "gradient_accumulation_steps": 1,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_seq_length": 384,
+    "doc_stride": 128,
+    "seed": 42,
+    "fp16": false,
+    "device": null
+  },
+  "device": "mps",
+  "parameters": {
+    "base": {
+      "total_parameters": 124056578,
+      "trainable_parameters": 124056578,
+      "trainable_percent": 100.0
+    },
+    "with_lora": {
+      "total_parameters": 124647940,
+      "trainable_parameters": 591362,
+      "trainable_percent": 0.4744
+    }
+  },
+  "dataset": {
+    "train": 1151,
+    "validation": 415,
+    "test": 434,
+    "train_features": 1151,
+    "val_features": 415
+  },
+  "training": {
+    "seconds": 598.5,
+    "minutes": 9.97,
+    "epochs": 3,
+    "steps": 432,
+    "final_train_loss": 1.6254201818395544,
+    "log_history": [
+      {
+        "loss": 2.0390053885323662,
+        "grad_norm": 4.796539306640625,
+        "learning_rate": 0.00024285714285714283,
+        "epoch": 0.24305555555555555,
+        "step": 35
+      },
+      {
+        "loss": 1.815433829171317,
+        "grad_norm": 4.404335021972656,
+        "learning_rate": 0.0002792307692307692,
+        "epoch": 0.4861111111111111,
+        "step": 70
+      },
+      {
+        "loss": 1.8930873325892856,
+        "grad_norm": 5.7441301345825195,
+        "learning_rate": 0.0002523076923076923,
+        "epoch": 0.7291666666666666,
+        "step": 105
+      },
+      {
+        "loss": 1.614029802594866,
+        "grad_norm": 4.198902606964111,
+        "learning_rate": 0.00022538461538461536,
+        "epoch": 0.9722222222222222,
+        "step": 140
+      },
+      {
+        "eval_loss": 1.9767296314239502,
+        "eval_runtime": 20.9035,
+        "eval_samples_per_second": 19.853,
+        "eval_steps_per_second": 1.244,
+        "epoch": 1.0,
+        "step": 144
+      },
+      {
+        "loss": 1.5677606855119979,
+        "grad_norm": 4.317047595977783,
+        "learning_rate": 0.00019846153846153844,
+        "epoch": 1.2152777777777777,
+        "step": 175
+      },
+      {
+        "loss": 1.4767131260463169,
+        "grad_norm": 12.87337589263916,
+        "learning_rate": 0.00017153846153846153,
+        "epoch": 1.4583333333333333,
+        "step": 210
+      },
+      {
+        "loss": 1.683363015311105,
+        "grad_norm": 4.642847537994385,
+        "learning_rate": 0.0001446153846153846,
+        "epoch": 1.7013888888888888,
+        "step": 245
+      },
+      {
+        "loss": 1.5667538234165737,
+        "grad_norm": 5.639617919921875,
+        "learning_rate": 0.00011769230769230768,
+        "epoch": 1.9444444444444444,
+        "step": 280
+      },
+      {
+        "eval_loss": 1.9049979448318481,
+        "eval_runtime": 24.5122,
+        "eval_samples_per_second": 16.93,
+        "eval_steps_per_second": 1.061,
+        "epoch": 2.0,
+        "step": 288
+      },
+      {
+        "loss": 1.476134055001395,
+        "grad_norm": 4.285081386566162,
+        "learning_rate": 9.076923076923075e-05,
+        "epoch": 2.1875,
+        "step": 315
+      },
+      {
+        "loss": 1.605082811628069,
+        "grad_norm": 5.070810794830322,
+        "learning_rate": 6.384615384615383e-05,
+        "epoch": 2.4305555555555554,
+        "step": 350
+      },
+      {
+        "loss": 1.5876346043178013,
+        "grad_norm": 4.555939674377441,
+        "learning_rate": 3.692307692307692e-05,
+        "epoch": 2.673611111111111,
+        "step": 385
+      },
+      {
+        "loss": 1.348488507952009,
+        "grad_norm": 4.720680236816406,
+        "learning_rate": 9.999999999999999e-06,
+        "epoch": 2.9166666666666665,
+        "step": 420
+      },
+      {
+        "eval_loss": 1.9139484167099,
+        "eval_runtime": 23.8434,
+        "eval_samples_per_second": 17.405,
+        "eval_steps_per_second": 1.09,
+        "epoch": 3.0,
+        "step": 432
+      },
+      {
+        "train_runtime": 598.3867,
+        "train_samples_per_second": 5.771,
+        "train_steps_per_second": 0.722,
+        "total_flos": 681397981516800.0,
+        "train_loss": 1.6254201818395544,
+        "epoch": 3.0,
+        "step": 432
+      }
+    ]
+  },
+  "metrics": {
+    "base": {
+      "validation": {
+        "exact_match": 32.53012048192771,
+        "f1": 62.91346310997654,
+        "n": 415
+      },
+      "test": {
+        "exact_match": 30.64516129032258,
+        "f1": 61.09869931456209,
+        "n": 434
+      }
+    },
+    "finetuned": {
+      "validation": {
+        "exact_match": 41.68674698795181,
+        "f1": 74.35589385109583,
+        "n": 415
+      },
+      "test": {
+        "exact_match": 43.54838709677419,
+        "f1": 73.49751318192237,
+        "n": 434
+      }
+    },
+    "delta_test": {
+      "exact_match": 12.9,
+      "f1": 12.4
+    }
+  },
+  "output_dir": "artifacts/finetuned/roberta-covidqa-lora"
+}
