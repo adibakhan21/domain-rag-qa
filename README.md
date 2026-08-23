@@ -5,6 +5,11 @@
 Question answering over a corpus of **147 full-text research papers**, built to
 *measure* retrieval and modelling choices rather than just assemble them.
 
+> **Companion study.** [`qasper-scientific-qa`](https://github.com/adibakhan21/qasper-scientific-qa)
+> applies this pipeline and evaluation design to 1,585 NLP papers (79,890 paragraphs), where the
+> questions were written from title and abstract alone rather than edited from the passage. It
+> tests which findings here are properties of the method and which are properties of this corpus.
+
 The project runs six retrieval configurations, a LoRA fine-tuning experiment, and
 a six-way end-to-end comparison bracketed by two controls (no-retrieval floor and
 oracle-context ceiling), so every claim decomposes into **retrieval error vs reader
